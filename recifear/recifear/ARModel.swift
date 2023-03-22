@@ -48,7 +48,6 @@ struct ARModel{
             
             var modelEntity = ModelEntity()
             
-            
             // CRIA O OBJETO 3D
             if (imageAnchor.name)! == "casa"{
                 modelEntity = try! ModelEntity.loadModel(named: "casa3.usdz")
@@ -79,32 +78,62 @@ struct ARModel{
         // PODE MEXER NA ESCALA DO OBJETO 3D
 //        construction.transform.scale = construction.transform.scale * 0.01
         construction.transform.scale = SIMD3<Float>(0.0001, 0.0001, 0.0001)
-    
         
         // SITUA O OBJETO 3D NO ESPAÇO EM RELAÇÃO À ÂNCORA
         construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
-        
-        arView.installGestures([.all], for: construction)
 
+        // INSTALA POSSIBILIDADE DE MUDAR O TAMANHO E ROTACIONAR
+        construction.generateCollisionShapes(recursive: true)
+        arView.installGestures([.scale, .rotation], for: construction)
+            .forEach{ gestureRecognizer in
+                gestureRecognizer.addTarget(self.arView, action: #selector(arView.capScale(_:)))
+        }
+        
         // FUNÇÕES QUE ADICIONAM DE FATO NA CENA
         imageAnchorEntity.addChild(construction)
-    
         arView.scene.addAnchor(imageAnchorEntity)
-
-        construction.generateCollisionShapes(recursive: true)
-        arView.installGestures([.rotation, .scale], for: construction)
-        
     }
     
-    func printAnchors(){
-        for anchor in arView.scene.anchors{
-            for children in anchor.children{
-                print(children.name)
-//                print(children)
-                print("____")
+}
 
+extension ARView {
+    
+    func enableFindOutMore(){
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        self.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func handleTap(_ recognizer: UITapGestureRecognizer){
+        let tapLocation = recognizer.location(in: self)
+        
+        if let entity = self.entity(at: tapLocation) as? ModelEntity{
+            if entity.name == "casa"{
+                print(entity.name)
+                Settings.shared.shouldOpenHouseView.toggle()
+                
+            } else if entity.name == "bigbang" {
+                print(entity.name)
+                Settings.shared.shouldOpenBigBangView.toggle()
+
+            } else {
+                
             }
         }
     }
     
+    func enableScaleCap(){
+        let scaleGestureRecognizer = EntityScaleGestureRecognizer(target: self, action: #selector(capScale(_:)))
+    }
+    
+    @objc func capScale(_ recognizer: EntityScaleGestureRecognizer){
+        
+        print((recognizer.entity?.scale.x)!)
+        
+        if (recognizer.entity?.scale.x)! > 0.00015 {
+            recognizer.entity?.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
+        }
+        if (recognizer.entity?.scale.x)! < 0.00005 {
+            recognizer.entity?.transform.scale = SIMD3<Float>(0.00005, 0.00005, 0.00005)
+        }
+    }
 }

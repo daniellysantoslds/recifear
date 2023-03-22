@@ -36,8 +36,4 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
         model.imageRecognized(anchors: anchors)
     }
     
-    func scaleConstruction(scaleFactor: CGFloat){
-        model.printAnchors()
-    }
-    
 }

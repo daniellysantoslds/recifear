@@ -13,26 +13,26 @@ import ARKit
 struct ContentView : View {
     @StateObject var arViewModel : ARViewModel = ARViewModel()
     
-    @State private var constructionScale : CGFloat = 0.001
+    @ObservedObject var settings = Settings.shared
     
     var body: some View {
         
-        ZStack(alignment: .bottom){
+        ZStack(){
             // INSTANCIA A VIEW PASSANDO COMO ARGUMENTO O VIEWMODEL, QUE SERÁ O CONTROLADOR
             ARViewContainer(arViewModel: arViewModel)
+        
+            Text(settings.shouldOpenHouseView ? "Esta é uma casa" : "")
+            Text(settings.shouldOpenBigBangView ? "Este é um planeta" : "")
             
-            VStack{
-                //                Text("Is Image Recognized?")
-                // APENAS RECUPERA UMA VARIÁVEL BOOLEANA DO VIEWMODEL PRA DIZER SE JÁ RECONHECEU UMA IMAGEM. SE TRUE, DIZ YEP, SE FALSE, DIZ NOP
-                //                switch arViewModel.imageRecognizedVar{
-                //                case false: Text("Nop").foregroundColor(.red)
-                //                case true: Text("Yep").foregroundColor(.green)
-                //                }
-                
-            }.font(.title)
-                .padding()
+        }
+            
         }
     }
+
+class Settings: ObservableObject{
+    static let shared = Settings()
+    @Published var shouldOpenHouseView = false
+    @Published var shouldOpenBigBangView = false
 }
 
 // CRIA O VIEW MODEL (QUE CONTROLA O MODEL)
@@ -40,9 +40,13 @@ struct ARViewContainer: UIViewRepresentable {
     
     var arViewModel : ARViewModel
     
-    // FUNÇÃO PADRÃO DO PROTOCOLO UIVIEWREPRESENTABLE QUE RODA O MÉTODO PRA DAR O DELEGATE PRO VIEWMODEL E RETORNA UMA VIEW (QUE SERÁ COLOCADA NA CONTENT VIEW ASSIM COMO QUALQUER OUTRA VIEW, TIPO UM Text() view, OU UMA Image() view, OU UMA Stack(){}
+    // FUNÇÃO PADRÃO DO PROTOCOLO UIVIEWREPRESENTABLE QUE RODA O MÉTODO PRA DAR O DELEGATE PRO VIEWMODEL E RETORNA UMA VIEW
     func makeUIView(context: Context) -> ARView {
         arViewModel.startSessionDelegate()
+        
+        arViewModel.arView.enableFindOutMore()
+        arViewModel.arView.enableScaleCap()
+        
         return arViewModel.arView
     }
     
