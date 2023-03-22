@@ -27,13 +27,13 @@ struct ARModel{
         // CONFIGURA A REALITADE AUMENTADA PARA IDENTIFICAR IMAGENS 2D NO ESPAÇO
         let configuration = ARImageTrackingConfiguration()
         configuration.trackingImages = trackerImages
-        configuration.maximumNumberOfTrackedImages = 4
+        configuration.maximumNumberOfTrackedImages = 20
         
         arView.session.run(configuration)
     }
     
     
-    // ENCONTRA AS IMAGENS NA CÂMERA E FAZ ALGO COM ELAS
+    // ENCONTRA AS IMAGENS NA CÂMERA
     mutating func imageRecognized(anchors: [ARAnchor]) {
         
         // PEGA TODAS AS IMAGENS DA CENA E ANCORA NUM LUGAR
@@ -48,12 +48,19 @@ struct ARModel{
             
             var modelEntity = ModelEntity()
             
+            
             // CRIA O OBJETO 3D
             if (imageAnchor.name)! == "casa"{
                 modelEntity = try! ModelEntity.loadModel(named: "casa3.usdz")
+                modelEntity.name = "casa"
+            }
+            if(imageAnchor.name)! == "rey"{
+                modelEntity = ModelEntity(mesh: MeshResource.generateBox(size: 2))
+                modelEntity.name = "rey"
             }
             if (imageAnchor.name)! == "bigbang"{
                 modelEntity = try! ModelEntity.loadModel(named: "mundo.usdz")
+                modelEntity.name = "bigbang"
             }
             
             imageRecognizedVar = true
@@ -70,17 +77,34 @@ struct ARModel{
         let imageAnchorEntity = AnchorEntity(anchor: imageAnchor)
        
         // PODE MEXER NA ESCALA DO OBJETO 3D
-        construction.transform.scale = construction.transform.scale * 1
-        
+//        construction.transform.scale = construction.transform.scale * 0.01
+        construction.transform.scale = SIMD3<Float>(0.0001, 0.0001, 0.0001)
+    
         
         // SITUA O OBJETO 3D NO ESPAÇO EM RELAÇÃO À ÂNCORA
         construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
         
-        
+        arView.installGestures([.all], for: construction)
+
         // FUNÇÕES QUE ADICIONAM DE FATO NA CENA
         imageAnchorEntity.addChild(construction)
+    
         arView.scene.addAnchor(imageAnchorEntity)
+
+        construction.generateCollisionShapes(recursive: true)
+        arView.installGestures([.rotation, .scale], for: construction)
         
+    }
+    
+    func printAnchors(){
+        for anchor in arView.scene.anchors{
+            for children in anchor.children{
+                print(children.name)
+//                print(children)
+                print("____")
+
+            }
+        }
     }
     
 }

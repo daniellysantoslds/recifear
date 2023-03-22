@@ -13,7 +13,7 @@ import ARKit
 struct ContentView : View {
     @StateObject var arViewModel : ARViewModel = ARViewModel()
     
-    @State private var constructionScale : CGFloat = 1
+    @State private var constructionScale : CGFloat = 0.001
     
     var body: some View {
         
@@ -22,12 +22,13 @@ struct ContentView : View {
             ARViewContainer(arViewModel: arViewModel)
             
             VStack{
-                Text("Is Image Recognized?")
+                //                Text("Is Image Recognized?")
                 // APENAS RECUPERA UMA VARIÁVEL BOOLEANA DO VIEWMODEL PRA DIZER SE JÁ RECONHECEU UMA IMAGEM. SE TRUE, DIZ YEP, SE FALSE, DIZ NOP
-                switch arViewModel.imageRecognizedVar{
-                case false: Text("Nop").foregroundColor(.red)
-                case true: Text("Yep").foregroundColor(.green)
-                }
+                //                switch arViewModel.imageRecognizedVar{
+                //                case false: Text("Nop").foregroundColor(.red)
+                //                case true: Text("Yep").foregroundColor(.green)
+                //                }
+                
             }.font(.title)
                 .padding()
         }
