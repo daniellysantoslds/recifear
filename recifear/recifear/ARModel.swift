@@ -55,7 +55,8 @@ struct ARModel{
             }
             if(imageAnchor.name)! == "rey"{
                 modelEntity = ModelEntity(mesh: MeshResource.generateBox(size: 2))
-                modelEntity.name = "rey"
+                modelEntity = try! ModelEntity.loadModel(named: "Predio.usdz")
+                modelEntity.name = "casa"
             }
             if (imageAnchor.name)! == "bigbang"{
                 modelEntity = try! ModelEntity.loadModel(named: "mundo.usdz")
@@ -115,8 +116,10 @@ extension ARView {
                 print(entity.name)
                 Settings.shared.shouldOpenBigBangView.toggle()
 
-            } else {
-                
+            } else if entity.name == "rey" {
+                print(entity.name)
+                Settings.shared.shouldOpenBigBangView.toggle()
+
             }
         }
     }
