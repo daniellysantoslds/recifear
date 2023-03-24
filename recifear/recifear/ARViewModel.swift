@@ -9,7 +9,6 @@ import Foundation
 import RealityKit
 import ARKit
 
-
 // É O VIEW MODEL. ELE CONTROLA O MODEL
 class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
     
@@ -18,12 +17,7 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
     
     // A VIEW DO MODEL, ONDE AS COISAS DE FATO DE DESENHAM E A GENTE VÊ
     var arView : ARView {
-            model.arView
-        }
-    
-    // SOMENTE UMA VARIÁVEL PARA DIZER QUE UMA IMAGEM FOI DETECTADA (APENAS A PRIMEIRA. AS SEGUINTES ELE NÃO AVISA, SÓ FICA LÁ NO TRUE)
-    var imageRecognizedVar: Bool{
-        model.imageRecognizedVar
+        model.arView
     }
     
     // DÁ AO VIEWMODEL O CONTROLE DA VIEW

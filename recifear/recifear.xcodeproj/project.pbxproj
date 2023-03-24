@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A19783C29CCDFAC004B7466 /* Predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A19783B29CCDFAC004B7466 /* Predio.usdz */; };
+		8A19783C29CCDFAC004B7466 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A19783B29CCDFAC004B7466 /* predio.usdz */; };
 		8AA8F1F229CB0F67002B1333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */; };
 		8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F1F329CB0F67002B1333 /* ContentView.swift */; };
 		8AA8F1F629CB0F67002B1333 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F1F529CB0F67002B1333 /* Experience.rcproject */; };
@@ -15,12 +15,12 @@
 		8AA8F1FB29CB0F68002B1333 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F1FA29CB0F68002B1333 /* Preview Assets.xcassets */; };
 		8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F20129CB0FA0002B1333 /* ARModel.swift */; };
 		8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */; };
-		8AA8F20729CB0FEF002B1333 /* casa3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20529CB0FEF002B1333 /* casa3.usdz */; };
-		8AA8F20829CB0FEF002B1333 /* mundo.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20629CB0FEF002B1333 /* mundo.usdz */; };
+		8AA8F20729CB0FEF002B1333 /* casa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20529CB0FEF002B1333 /* casa.usdz */; };
+		8AA8F20829CB0FEF002B1333 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20629CB0FEF002B1333 /* barraco.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A19783B29CCDFAC004B7466 /* Predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Predio.usdz; sourceTree = "<group>"; };
+		8A19783B29CCDFAC004B7466 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
 		8AA8F1EE29CB0F67002B1333 /* recifear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recifear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA8F1F329CB0F67002B1333 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,8 +29,8 @@
 		8AA8F1FA29CB0F68002B1333 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AA8F20129CB0FA0002B1333 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
-		8AA8F20529CB0FEF002B1333 /* casa3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = casa3.usdz; sourceTree = "<group>"; };
-		8AA8F20629CB0FEF002B1333 /* mundo.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = mundo.usdz; sourceTree = "<group>"; };
+		8AA8F20529CB0FEF002B1333 /* casa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = casa.usdz; sourceTree = "<group>"; };
+		8AA8F20629CB0FEF002B1333 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +67,9 @@
 				8AA8F20129CB0FA0002B1333 /* ARModel.swift */,
 				8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */,
 				8AA8F1F329CB0F67002B1333 /* ContentView.swift */,
-				8AA8F20529CB0FEF002B1333 /* casa3.usdz */,
-				8AA8F20629CB0FEF002B1333 /* mundo.usdz */,
-				8A19783B29CCDFAC004B7466 /* Predio.usdz */,
+				8AA8F20529CB0FEF002B1333 /* casa.usdz */,
+				8AA8F20629CB0FEF002B1333 /* barraco.usdz */,
+				8A19783B29CCDFAC004B7466 /* predio.usdz */,
 				8AA8F1F529CB0F67002B1333 /* Experience.rcproject */,
 				8AA8F1F729CB0F68002B1333 /* Assets.xcassets */,
 				8AA8F1F929CB0F68002B1333 /* Preview Content */,
@@ -143,9 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA8F20729CB0FEF002B1333 /* casa3.usdz in Resources */,
-				8A19783C29CCDFAC004B7466 /* Predio.usdz in Resources */,
-				8AA8F20829CB0FEF002B1333 /* mundo.usdz in Resources */,
+				8AA8F20729CB0FEF002B1333 /* casa.usdz in Resources */,
+				8A19783C29CCDFAC004B7466 /* predio.usdz in Resources */,
+				8AA8F20829CB0FEF002B1333 /* barraco.usdz in Resources */,
 				8AA8F1FB29CB0F68002B1333 /* Preview Assets.xcassets in Resources */,
 				8AA8F1F829CB0F68002B1333 /* Assets.xcassets in Resources */,
 			);

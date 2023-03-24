@@ -12,27 +12,27 @@ import ARKit
 
 struct ContentView : View {
     @StateObject var arViewModel : ARViewModel = ARViewModel()
-    
     @ObservedObject var settings = Settings.shared
     
     var body: some View {
-        
         ZStack(){
             // INSTANCIA A VIEW PASSANDO COMO ARGUMENTO O VIEWMODEL, QUE SERÁ O CONTROLADOR
             ARViewContainer(arViewModel: arViewModel)
-        
+            
             Text(settings.shouldOpenHouseView ? "Esta é uma casa" : "")
-            Text(settings.shouldOpenBigBangView ? "Este é um planeta" : "")
-            
-        }
-            
+            Text(settings.shouldOpenShackView ? "Este é um barraco" : "")
+            Text(settings.shouldOpenBuildingView ? "Este é um prédio" : "")
+            Text(settings.shouldOpenStiltHouseView ? "Esta é uma palafita" : "")
         }
     }
+}
 
 class Settings: ObservableObject{
     static let shared = Settings()
     @Published var shouldOpenHouseView = false
-    @Published var shouldOpenBigBangView = false
+    @Published var shouldOpenShackView = false
+    @Published var shouldOpenBuildingView = false
+    @Published var shouldOpenStiltHouseView = false
 }
 
 // CRIA O VIEW MODEL (QUE CONTROLA O MODEL)
@@ -54,7 +54,6 @@ struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {
         
     }
-    
 }
 
 #if DEBUG
