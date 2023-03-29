@@ -14,16 +14,13 @@ struct MenuView: View {
     
     let cardInfos = [["experiencias", "Experiências"], ["comousar", "Como usar o app"]]
     
-    
-    
-    
-    
+ 
     var body: some View {
         
         HStack{
-                
                 VStack{
                     Color.white.ignoresSafeArea()
+                    //Image("experiencias")
                     ForEach(cardInfos, id: \.self) { cardInfo in
                         CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
                             .onTapGesture {
@@ -31,8 +28,12 @@ struct MenuView: View {
                             }
                         
                     }
+                    .listStyle(SidebarListStyle())
                 }
-                .listStyle(SidebarListStyle())
+                
+
+            
+               
             
             .frame(width: 306)
             ZStack{
@@ -48,9 +49,7 @@ struct MenuView: View {
             
         }
         
-        
-        
-        
+      
         
     }
     
