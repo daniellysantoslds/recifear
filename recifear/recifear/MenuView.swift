@@ -14,26 +14,27 @@ struct MenuView: View {
     
     let cardInfos = [["experiencias", "Experiências"], ["comousar", "Como usar o app"]]
     
- 
+    
     var body: some View {
         
+        NavigationStack {
         HStack{
-                VStack{
-                   // Color.white.ignoresSafeArea()
-                    //Image("experiencias")
-                    ForEach(cardInfos, id: \.self) { cardInfo in
-                        CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
-                            .onTapGesture {
-                                selectedCard = cardInfo[0]
-                            }
-                        
-                    }
-                    .listStyle(SidebarListStyle())
+            VStack{
+                // Color.white.ignoresSafeArea()
+                //Image("experiencias")
+                ForEach(cardInfos, id: \.self) { cardInfo in
+                    CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
+                        .onTapGesture {
+                            selectedCard = cardInfo[0]
+                        }
+                    
                 }
-                
-
+                .listStyle(SidebarListStyle())
+            }
             
-               
+            
+            
+            
             
             .frame(maxWidth: 306)
             ZStack{
@@ -44,12 +45,12 @@ struct MenuView: View {
                 } else{
                     HowToUseView()
                 }
-
+                
             }
             
         }
+    }
         
-      
         
     }
     
@@ -59,7 +60,8 @@ struct MenuView: View {
 struct ExperienceView : View {
     
     
-    let longCardInfos = [["montandorecife", "Montando Recife", "Crie o Recife dos seus sonhos"], ["comousar", "Montando Recife 2", "Crie o Recife dos seus sonhos2"]]
+    let longCardInfos = [["montandorecife", "Montando Recife", "Crie o Recife dos seus sonhos"],
+                         ["comousar", "Montando Recife 2", "Crie o Recife dos seus sonhos2"]]
     
     
     
@@ -72,18 +74,30 @@ struct ExperienceView : View {
                 .font(.system(size: 40))
                 .padding(.top, 60).background(Color.pink)
                 .padding(.bottom, 30).background(Color.cyan)
-           // ZStack {
-            VStack {
-                ForEach(longCardInfos, id: \.self) { longCardInfo in
-                    LongCardView(longCardImage: longCardInfo[0], longTitle: longCardInfo[1], longSubtitle: longCardInfo[2])
+            // ZStack {
+            
+       
+                VStack {
+                        
+                    NavigationLink(destination: DescriptionView()) {
+                            LongCardView(longCardImage: longCardInfos[0][0], longTitle: longCardInfos[0][1], longSubtitle: longCardInfos[0][2])
+                    }.navigationTitle("Voltar ao menu").toolbar(.hidden, for: .navigationBar)
+                    
+                    NavigationLink(destination: HowToUseView()) {
+                        LongCardView(longCardImage: longCardInfos[1][0], longTitle: longCardInfos[1][1], longSubtitle: longCardInfos[1][2])
+                    }
+               
+                        
                     
                 }
-            }//.padding(.bottom, 56).background(Color.green)
-
-       
+         
             
-       // }//.padding(20)
-    }
+           //.padding(.bottom, 56).background(Color.green)
+            
+            
+            
+            // }//.padding(20)
+        }
         
         
         
@@ -96,6 +110,52 @@ struct HowToUseView : View {
         Rectangle().frame(width: 400).foregroundColor(.purple)
     }
 }
+
+
+struct DescriptionView : View {
+    @State var showExperience = false
+    var body: some View {
+        NavigationStack{
+            HStack{
+                
+                VStack{
+                    Text("Montando o Recife")
+                    Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")
+                    
+                    NavigationLink(destination: Text("oi"), isActive: $showExperience)
+                    {
+                        
+                        Button("Começar Experiência"){
+                            self.showExperience = true
+                        }
+                        
+                    }.navigationTitle("Voltar ao menu").toolbar(.hidden, for: .navigationBar)
+                    
+                }
+                
+                Image("experienciarecife")
+                    .resizable()
+                    .ignoresSafeArea()
+                    .frame(width: 677, height: 720)
+                    .scaledToFill()
+                
+            }
+            
+        }
+        
+        
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
 
 struct CardView: View {
     let cardImage: String
@@ -121,22 +181,22 @@ struct LongCardView: View {
     
     var body: some View {
         
-      
+        
         
         ZStack(alignment: .leading ) {
             
-                Image(longCardImage)
-                    .resizable()
-                    .frame(width: 737, height: 246)
+            Image(longCardImage)
+                .resizable()
+                .frame(width: 737, height: 246)
             VStack(alignment: .leading){
-//
+                //
                 Text(longTitle)
                 Text(longSubtitle)
-                   
-
+                
+                
             }.padding(.leading, 24)
                 .padding(.top, 160)
-
+            
             
         }.padding(.top, 20).background(Color.orange)
     }
@@ -192,7 +252,7 @@ struct LongCardView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+       MenuView()
     }
 }
 
