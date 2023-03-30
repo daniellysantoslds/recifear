@@ -80,10 +80,10 @@ struct ExperienceView : View {
 struct HowToUseView : View {
     
     let howToCardInfos = [
-        ["montandorecife", "Primeiros Passos"],
-        ["montandorecife", "As experiências"],
-        ["montandorecife", "Realidade aumentada"],
-        ["montandorecife", "Sobre nós"]]
+        ["montandorecife", "retangulo", "Primeiros Passos"],
+        ["montandorecife",  "retangulo", "As experiências"],
+        ["montandorecife",  "retangulo", "Realidade aumentada"],
+        ["montandorecife",  "retangulo", "Sobre nós"]]
     
     
     
@@ -99,13 +99,13 @@ struct HowToUseView : View {
             
             
             HStack {
-                HowToCardView(howToCardImage: howToCardInfos[0][0], howToTitle: howToCardInfos[0][1])
-                HowToCardView(howToCardImage: howToCardInfos[1][0], howToTitle: howToCardInfos[1][1])
+                HowToCardView(howToCardImage: howToCardInfos[0][0], howToRetanguloImage: howToCardInfos[0][1], howToTitle: howToCardInfos[0][2])
+                HowToCardView(howToCardImage: howToCardInfos[1][0], howToRetanguloImage: howToCardInfos[1][1], howToTitle: howToCardInfos[1][2])
             }
             
             HStack {
-                HowToCardView(howToCardImage: howToCardInfos[2][0], howToTitle: howToCardInfos[2][1])
-                HowToCardView(howToCardImage: howToCardInfos[3][0], howToTitle: howToCardInfos[3][1])
+                HowToCardView(howToCardImage: howToCardInfos[2][0], howToRetanguloImage: howToCardInfos[2][1], howToTitle: howToCardInfos[2][2])
+                HowToCardView(howToCardImage: howToCardInfos[3][0], howToRetanguloImage: howToCardInfos[3][1], howToTitle: howToCardInfos[3][2])
             }
             
         }
@@ -180,17 +180,30 @@ struct LongCardView: View {
 
 struct HowToCardView: View {
     let howToCardImage: String
+    let howToRetanguloImage: String
     let howToTitle: String
+   
     
     var body: some View {
-        ZStack(alignment: .leading) {
+        
+        
+        
+        VStack(alignment: .leading, spacing: 0) {
+            
             Image(howToCardImage)
                 .resizable()
                 .frame(width: 343, height: 168)
             
-            Text(howToTitle)
-                .padding(.leading, 24)
-                    .padding(.top, 160)
+            ZStack {
+                Image(howToRetanguloImage).resizable().frame(width: 343, height: 72)
+                
+                Text(howToTitle)
+                    .frame(maxWidth:333, alignment: .leading)
+//                    .padding(.leading, 24)
+//                        .padding(.top, 160)
+            }
+            
+         
             
         }
     }
