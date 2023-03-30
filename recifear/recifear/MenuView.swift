@@ -19,7 +19,7 @@ struct MenuView: View {
         
         HStack{
                 VStack{
-                    Color.white.ignoresSafeArea()
+                   // Color.white.ignoresSafeArea()
                     //Image("experiencias")
                     ForEach(cardInfos, id: \.self) { cardInfo in
                         CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
@@ -35,7 +35,7 @@ struct MenuView: View {
             
                
             
-            .frame(width: 306)
+            .frame(maxWidth: 306)
             ZStack{
                 Color(red: 255/255, green: 250/255, blue: 248/255).ignoresSafeArea()
                 
