@@ -78,8 +78,38 @@ struct ExperienceView : View {
 
 
 struct HowToUseView : View {
+    
+    let howToCardInfos = [
+        ["montandorecife", "Primeiros Passos"],
+        ["montandorecife", "As experiências"],
+        ["montandorecife", "Realidade aumentada"],
+        ["montandorecife", "Sobre nós"]]
+    
+    
+    
+    
     var body : some View {
-        Rectangle().frame(width: 400).foregroundColor(.purple)
+        
+        
+        VStack(alignment: .leading) {
+            
+            Text("Como usar o app")  .font(.system(size: 40))
+            Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")  .font(.system(size: 20))
+            
+            
+            
+            HStack {
+                HowToCardView(howToCardImage: howToCardInfos[0][0], howToTitle: howToCardInfos[0][1])
+                HowToCardView(howToCardImage: howToCardInfos[1][0], howToTitle: howToCardInfos[1][1])
+            }
+            
+            HStack {
+                HowToCardView(howToCardImage: howToCardInfos[2][0], howToTitle: howToCardInfos[2][1])
+                HowToCardView(howToCardImage: howToCardInfos[3][0], howToTitle: howToCardInfos[3][1])
+            }
+            
+        }
+       
     }
 }
 
@@ -148,6 +178,35 @@ struct LongCardView: View {
     }
 }
 
+struct HowToCardView: View {
+    let howToCardImage: String
+    let howToTitle: String
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Image(howToCardImage)
+                .resizable()
+                .frame(width: 343, height: 168)
+            
+            Text(howToTitle)
+                .padding(.leading, 24)
+                    .padding(.top, 160)
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
 //struct SplitView: View {
 //
 //    @State var selected: Int? = nil
@@ -194,7 +253,7 @@ struct LongCardView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        HowToUseView()
     }
 }
 
