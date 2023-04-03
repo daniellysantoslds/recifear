@@ -10,6 +10,7 @@ import SwiftUI
 struct BuildingInfoView: View {
     @State var impactBool : Bool = false
     @State var historyBool : Bool = false
+    
     var buildingInfoModel : BuildingInfoModel
     @Binding var opened : Bool
     
@@ -26,17 +27,24 @@ struct BuildingInfoView: View {
                 Text(buildingInfoModel.title)
                 Text(buildingInfoModel.description)
                 
-                Button("Impacto"){
+                
+                LargeButton(title: "Impacto", icon: Image(systemName:"play.fill")  , action: {
+                    print("ALO");
                     impactBool.toggle()
                     historyBool = false
                 }
+                );
+
                 
                 Text(impactBool ?  buildingInfoModel.impact : "")
                 
-                Button("História do Recife"){
+                LargeButton(title: "História do Recife", icon: Image(systemName:"play.fill")  , action: {
+                    print("ALO");
                     historyBool.toggle()
                     impactBool = false
                 }
+                );
+                
                 
                 Text(historyBool ?  buildingInfoModel.history : "")
                 
