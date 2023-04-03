@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		30D3A66029D30F20005FA23F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3A65F29D30F20005FA23F /* MenuView.swift */; };
 		8A19783C29CCDFAC004B7466 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A19783B29CCDFAC004B7466 /* predio.usdz */; };
+		8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */; };
+		8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */; };
+		8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */; };
 		8AA8F1F229CB0F67002B1333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */; };
 		8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F1F329CB0F67002B1333 /* ContentView.swift */; };
 		8AA8F1F629CB0F67002B1333 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F1F529CB0F67002B1333 /* Experience.rcproject */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		30D3A65F29D30F20005FA23F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8A19783B29CCDFAC004B7466 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
+		8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoView.swift; sourceTree = "<group>"; };
+		8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuldingInfoModel.swift; sourceTree = "<group>"; };
+		8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoViewModel.swift; sourceTree = "<group>"; };
 		8AA8F1EE29CB0F67002B1333 /* recifear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recifear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA8F1F329CB0F67002B1333 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +76,9 @@
 				8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */,
 				8AA8F1F329CB0F67002B1333 /* ContentView.swift */,
 				30D3A65F29D30F20005FA23F /* MenuView.swift */,
+				8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */,
+				8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */,
+				8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */,
 				8AA8F20529CB0FEF002B1333 /* casa.usdz */,
 				8AA8F20629CB0FEF002B1333 /* barraco.usdz */,
 				8A19783B29CCDFAC004B7466 /* predio.usdz */,
@@ -161,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */,
+				8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */,
 				8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */,
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
+				8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */,
 				8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */,
 				8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */,
 				8AA8F1F229CB0F67002B1333 /* AppDelegate.swift in Sources */,
