@@ -124,9 +124,17 @@ struct DescriptionView : View {
                     Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")
                     
                     NavigationLink(destination: Text("oi"), isActive: $showExperience){
-                        Button("Começar Experiência"){
+                        
+                        LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill")  , action: {
+                            print("ALO");
                             self.showExperience = true
                         }
+                        );
+
+//                        
+//                        Button("Começar Experiência"){
+//                            self.showExperience = true
+//                        }
                     }
                     .navigationTitle(showExperience ? "Voltar à descrição" : "")
                 }
@@ -219,7 +227,6 @@ struct HowToCardView: View {
 
 
 
-
 //struct SplitView: View {
 //
 //    @State var selected: Int? = nil
@@ -266,7 +273,7 @@ struct HowToCardView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        HowToUseView()
+        DescriptionView()
     }
 }
 

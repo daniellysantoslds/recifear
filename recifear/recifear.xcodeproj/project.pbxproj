@@ -21,6 +21,7 @@
 		8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */; };
 		8AA8F20729CB0FEF002B1333 /* casa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20529CB0FEF002B1333 /* casa.usdz */; };
 		8AA8F20829CB0FEF002B1333 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20629CB0FEF002B1333 /* barraco.usdz */; };
+		93C2615529DB5E8B001BBFA9 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2615429DB5E8B001BBFA9 /* LargeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		8AA8F20529CB0FEF002B1333 /* casa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = casa.usdz; sourceTree = "<group>"; };
 		8AA8F20629CB0FEF002B1333 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
+		93C2615429DB5E8B001BBFA9 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		8AA8F1F029CB0F67002B1333 /* recifear */ = {
 			isa = PBXGroup;
 			children = (
+				93C2615229DB5D44001BBFA9 /* Models */,
 				8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */,
 				8AA8F20129CB0FA0002B1333 /* ARModel.swift */,
 				8AA8F1F129CB0F67002B1333 /* AppDelegate.swift */,
@@ -95,6 +98,22 @@
 				8AA8F1FA29CB0F68002B1333 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		93C2615229DB5D44001BBFA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93C2615329DB5D52001BBFA9 /* Buttons */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		93C2615329DB5D52001BBFA9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				93C2615429DB5E8B001BBFA9 /* LargeButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */,
+				93C2615529DB5E8B001BBFA9 /* LargeButton.swift in Sources */,
 				8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */,
 				8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */,
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
