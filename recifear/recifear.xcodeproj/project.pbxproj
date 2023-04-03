@@ -22,6 +22,8 @@
 		8AA8F20729CB0FEF002B1333 /* casa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20529CB0FEF002B1333 /* casa.usdz */; };
 		8AA8F20829CB0FEF002B1333 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8AA8F20629CB0FEF002B1333 /* barraco.usdz */; };
 		93C2615529DB5E8B001BBFA9 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2615429DB5E8B001BBFA9 /* LargeButton.swift */; };
+		93C2615829DB7791001BBFA9 /* FirstStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2615729DB7791001BBFA9 /* FirstStepsView.swift */; };
+		93C2615A29DB89EE001BBFA9 /* TheExperiencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C2615929DB89EE001BBFA9 /* TheExperiencesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		8AA8F20529CB0FEF002B1333 /* casa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = casa.usdz; sourceTree = "<group>"; };
 		8AA8F20629CB0FEF002B1333 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
 		93C2615429DB5E8B001BBFA9 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		93C2615729DB7791001BBFA9 /* FirstStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepsView.swift; sourceTree = "<group>"; };
+		93C2615929DB89EE001BBFA9 /* TheExperiencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheExperiencesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		8AA8F1F029CB0F67002B1333 /* recifear */ = {
 			isa = PBXGroup;
 			children = (
+				93C2615629DB777E001BBFA9 /* Views */,
 				93C2615229DB5D44001BBFA9 /* Models */,
 				8AA8F20329CB0FC2002B1333 /* ARViewModel.swift */,
 				8AA8F20129CB0FA0002B1333 /* ARModel.swift */,
@@ -114,6 +119,15 @@
 				93C2615429DB5E8B001BBFA9 /* LargeButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		93C2615629DB777E001BBFA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93C2615729DB7791001BBFA9 /* FirstStepsView.swift */,
+				93C2615929DB89EE001BBFA9 /* TheExperiencesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +209,11 @@
 				8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */,
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
 				8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */,
+				93C2615A29DB89EE001BBFA9 /* TheExperiencesView.swift in Sources */,
 				8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */,
 				8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */,
 				8AA8F1F229CB0F67002B1333 /* AppDelegate.swift in Sources */,
+				93C2615829DB7791001BBFA9 /* FirstStepsView.swift in Sources */,
 				8AA8F1F629CB0F67002B1333 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
