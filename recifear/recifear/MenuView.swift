@@ -68,7 +68,7 @@ struct ExperienceView : View {
                     LongCardView(longCardImage: longCardInfos[0][0], longTitle: longCardInfos[0][1], longSubtitle: longCardInfos[0][2])
                 }
                 .navigationTitle(showBuildingRecife ? "Voltar ao menu" : "")
-               
+                
                 NavigationLink(destination: HowToUseView()) {
                     LongCardView(longCardImage: longCardInfos[1][0], longTitle: longCardInfos[1][1], longSubtitle: longCardInfos[1][2])
                 }
@@ -94,37 +94,37 @@ struct HowToUseView : View {
     
     var body : some View {
         
-        
-        VStack(alignment: .leading) {
-            
-            Text("Como usar o app")  .font(.system(size: 40)).foregroundColor(Color("primary"))
-            Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")  .font(.system(size: 20)).foregroundColor(Color("primary"))
-            
-            
-            
-            HStack {
-//                NavigationLink(destination: FirstStepsView()) {
-                    HowToCardView(howToCardImage: howToCardInfos[0][0], howToRetanguloImage: howToCardInfos[0][1], howToTitle: howToCardInfos[0][2])
-                    
-                    
-//                    if selectedCard == "Primeiros Passos" {
-//                        FirstStepsView()
-//                    }
-//
-                HowToCardView(howToCardImage: howToCardInfos[1][0], howToRetanguloImage: howToCardInfos[1][1], howToTitle: howToCardInfos[1][2])
+     
+            VStack(alignment: .leading) {
+                
+                Text("Como usar o app")  .font(.system(size: 40)).foregroundColor(Color("primary"))
+                Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")  .font(.system(size: 20)).foregroundColor(Color("primary"))
+                
+                
+                
+                HStack {
+                    NavigationLink(destination: FirstStepsView()) {
+                        HowToCardView(howToCardImage: howToCardInfos[0][0], howToRetanguloImage: howToCardInfos[0][1], howToTitle: howToCardInfos[0][2])
+                        
+                    }
+                    //                    if selectedCard == "Primeiros Passos" {
+                    //                        FirstStepsView()
+                    //                    }
+                    //
+                    HowToCardView(howToCardImage: howToCardInfos[1][0], howToRetanguloImage: howToCardInfos[1][1], howToTitle: howToCardInfos[1][2])
                 }
-               
-            HStack {
-                HowToCardView(howToCardImage: howToCardInfos[2][0], howToRetanguloImage: howToCardInfos[2][1], howToTitle: howToCardInfos[2][2])
-                HowToCardView(howToCardImage: howToCardInfos[3][0], howToRetanguloImage: howToCardInfos[3][1], howToTitle: howToCardInfos[3][2])
+                
+                HStack {
+                    HowToCardView(howToCardImage: howToCardInfos[2][0], howToRetanguloImage: howToCardInfos[2][1], howToTitle: howToCardInfos[2][2])
+                    HowToCardView(howToCardImage: howToCardInfos[3][0], howToRetanguloImage: howToCardInfos[3][1], howToTitle: howToCardInfos[3][2])
+                }
             }
-            }
-            
-           
-            
         }
-       
-    }
+        
+        
+    
+    
+}
 
 struct DescriptionView : View {
     @State var showExperience = false
@@ -142,11 +142,11 @@ struct DescriptionView : View {
                             self.showExperience = true
                         }
                         );
-
-//                        
-//                        Button("Começar Experiência"){
-//                            self.showExperience = true
-//                        }
+                        
+                        //
+                        //                        Button("Começar Experiência"){
+                        //                            self.showExperience = true
+                        //                        }
                     }
                     .navigationTitle(showExperience ? "Voltar à descrição" : "")
                 }
@@ -192,7 +192,7 @@ struct LongCardView: View {
                 Text(longSubtitle)
             }.padding(.leading, 24)
                 .padding(.top, 160)
-      
+            
         }.padding(.top, 20)
             .background(Color.orange)
     }
@@ -202,7 +202,7 @@ struct HowToCardView: View {
     let howToCardImage: String
     let howToRetanguloImage: String
     let howToTitle: String
-   
+    
     
     var body: some View {
         
@@ -219,11 +219,11 @@ struct HowToCardView: View {
                 
                 Text(howToTitle)
                     .frame(maxWidth:333, alignment: .leading)
-//                    .padding(.leading, 24)
-//                        .padding(.top, 160)
+                //                    .padding(.leading, 24)
+                //                        .padding(.top, 160)
             }
             
-         
+            
             
         }
     }
