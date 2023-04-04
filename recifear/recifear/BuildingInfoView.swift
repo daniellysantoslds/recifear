@@ -35,7 +35,7 @@ struct BuildingInfoView: View {
                 HStack {
                     Text(buildingInfoModel.title)
 //                        .font(.largeTitle)
-                        .font(.custom("Obviously-Variable", size: 40))
+                        .font(.custom("ObviouslyVar-Reg", size: 40))
                     Spacer()
                 }
                 
