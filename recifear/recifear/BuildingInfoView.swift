@@ -17,41 +17,71 @@ struct BuildingInfoView: View {
     var body: some View {
         
         ZStack{
-            Color.green.ignoresSafeArea()
-            VStack{
+            Color("background").ignoresSafeArea()
+            VStack(spacing: 16) {
                 
-                Button("Fechar"){
-                    opened = false
+                HStack{
+                    Button {
+                        opened = false
+                    } label: {
+                        HStack{
+                            Image(systemName: "multiply.square.fill")
+                            Text("Fechar")
+                        }.foregroundColor(Color("accent"))
+                    }
+                    Spacer()
                 }
                 
-                Text(buildingInfoModel.title)
-                Text(buildingInfoModel.description)
-                
-                
-                LargeButton(title: "Impacto", icon: Image(systemName:"play.fill")  , action: {
-                    print("ALO");
-                    impactBool.toggle()
-                    historyBool = false
+                HStack {
+                    Text(buildingInfoModel.title)
+//                        .font(.largeTitle)
+                        .font(.custom("Obviously-Variable", size: 40))
+                    Spacer()
                 }
-                );
+                
+                HStack {
+                    Text(buildingInfoModel.description)
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                }
+                Spacer()
+                HStack {
+                    LargeButton(title: "Impacto",
+                                icon: impactBool ? Image(systemName : "arrowtriangle.down.fill") : Image(systemName:"arrowtriangle.forward.fill"),
+                                action: {
+                        impactBool.toggle()
+                        historyBool = false})
+                    Spacer()
+                }
 
-                
-                Text(impactBool ?  buildingInfoModel.impact : "")
-                
-                LargeButton(title: "História do Recife", icon: Image(systemName:"play.fill")  , action: {
-                    print("ALO");
-                    historyBool.toggle()
-                    impactBool = false
+                if impactBool == true {
+                    HStack {
+                        Text(buildingInfoModel.impact)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
                 }
-                );
                 
+                HStack {
+                    LargeButton(title: "História do Recife",
+                                icon: historyBool ? Image(systemName : "arrowtriangle.down.fill") : Image(systemName:"arrowtriangle.forward.fill"),
+                                action: {
+                        historyBool.toggle()
+                        impactBool = false})
+                    Spacer()
+                }
                 
-                Text(historyBool ?  buildingInfoModel.history : "")
-                
+                if historyBool{
+                    HStack {
+                        Text(buildingInfoModel.history)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
+                }
             }
+            .padding(61)
         }
         .frame(maxWidth: 456)
-        
     }
 }
 
@@ -71,23 +101,23 @@ struct DummyView : View {
                 Spacer()
                 Button("predio"){
                     buildingInfoModel = buildingInfoViewModel.selectBuildingInfo(building: "predio")
-                        showBuildingInfo = true
+                    showBuildingInfo = true
                 }
                 Spacer()
                 Button("palafita"){
                     buildingInfoModel = buildingInfoViewModel.selectBuildingInfo(building: "palafita")
-                        showBuildingInfo = true
+                    showBuildingInfo = true
                 }
                 Spacer()
                 Button("historico"){
                     buildingInfoModel = buildingInfoViewModel.selectBuildingInfo(building: "historico")
-                        showBuildingInfo = true
+                    showBuildingInfo = true
                     
                 }
                 Spacer()
                 Button("barraco"){
                     buildingInfoModel = buildingInfoViewModel.selectBuildingInfo(building: "barraco")
-                        showBuildingInfo = true
+                    showBuildingInfo = true
                 }
                 Spacer()
             }

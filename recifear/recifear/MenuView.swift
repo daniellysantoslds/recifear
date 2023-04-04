@@ -120,10 +120,6 @@ struct HowToUseView : View {
                 }
             }
         }
-        
-        
-    
-    
 }
 
 struct DescriptionView : View {
@@ -203,10 +199,7 @@ struct HowToCardView: View {
     let howToRetanguloImage: String
     let howToTitle: String
     
-    
     var body: some View {
-        
-        
         
         VStack(alignment: .leading, spacing: 0) {
             
@@ -222,66 +215,11 @@ struct HowToCardView: View {
                 //                    .padding(.leading, 24)
                 //                        .padding(.top, 160)
             }
-            
-            
-            
+         
         }
     }
-    
-    
-    
-    
-    
-    
 }
 
-
-
-
-
-//struct SplitView: View {
-//
-//    @State var selected: Int? = nil
-//
-//    var body: some View {
-//        HStack {
-//            List(0...10, id: \.self, selection: $selected) { number in
-//                HStack {
-//                    Text("Select \(number)")
-//                    Spacer()
-//                }
-//                .background(number == selected ? highlightColor : nil)
-//                .contentShape(Rectangle())
-//                .onTapGesture {
-//                    selected = number
-//                }
-//            }
-//            .frame(width: 200)
-//            .listStyle(SidebarListStyle())
-//
-//            Spacer()
-//            detailView
-//            Spacer()
-//        }
-//
-//    }
-//
-//    @ViewBuilder var detailView: some View {
-//        if selected == nil {
-//            Text("Nothing is selected")
-//        } else {
-//            Text("\(selected!) is selected")
-//        }
-//    }
-//
-//    var highlightColor: some View {
-//        Color.accentColor
-//            .opacity(0.8)
-//            .cornerRadius(10)
-//            .frame(height: 40)
-//            .frame(minWidth: 150, maxWidth: 200)
-//    }
-//}
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {

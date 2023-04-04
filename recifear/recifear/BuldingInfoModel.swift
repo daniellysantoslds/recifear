@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BuildingInfoModel {
+struct BuildingInfoModel : Hashable {
     var bid : String
     var title : String
     var description : String
