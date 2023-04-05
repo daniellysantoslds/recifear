@@ -20,8 +20,7 @@ struct LargeButton: View {
                 
                 Text(title)
                     .foregroundColor(Color("background"))
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
+                    .font(.custom("ObviouslyVar-WideSmBd", size: 16)).foregroundColor(Color("background"))                    .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .lineSpacing(21.6)
                 
