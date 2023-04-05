@@ -20,7 +20,7 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             HStack{
-                VStack{
+                VStack(spacing: 36){
                     ForEach(cardInfos, id: \.self) { cardInfo in
                         CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
                             .onTapGesture {
@@ -54,12 +54,12 @@ struct ExperienceView : View {
     @State var showBuildingRecife = false
     
     var body : some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 36) {
             Text("Experiências")
                 .font(.custom("ObviouslyVar-WideSmBd", size: 40))
                 .foregroundColor(Color("primary"))
-                .padding(.top, 60)
-                .padding(.bottom, 30)
+//                .padding(.top, 60)
+//                .padding(.bottom, 30)
                 
             
             VStack {
@@ -71,15 +71,12 @@ struct ExperienceView : View {
                
             
             }
-        }
+        }.padding(.top, -350)
     }
 }
 
 
 struct HowToUseView : View {
-    
-    //@State var selectedCard: String = "Primeiros Passos"
-    
     
     let howToCardInfos = [
         ["montandorecife", "retangulo", "Primeiros Passos"],
@@ -87,34 +84,31 @@ struct HowToUseView : View {
         ["montandorecife",  "retangulo", "Realidade aumentada"],
         ["montandorecife",  "retangulo", "Sobre nós"]]
     
-    
-    
-    
+  
     var body : some View {
         
      
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 36){
                 
-                Text("Como usar o app").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
+            Text("Como usar o app").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
+                .padding(.top, 60)
 
                 Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")  .font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary"))
-
-                
-                
-                
-                HStack {
+  
+            HStack{
                     NavigationLink(destination: FirstStepsView()) {
                         HowToCardView(howToCardImage: howToCardInfos[0][0], howToRetanguloImage: howToCardInfos[0][1], howToTitle: howToCardInfos[0][2])
                         
                     }
+                
                     NavigationLink(destination: TheExperiencesView()){
                         
                         HowToCardView(howToCardImage: howToCardInfos[1][0], howToRetanguloImage: howToCardInfos[1][1], howToTitle: howToCardInfos[1][2])
                     }
 
-                }
-                
-                HStack {
+            }
+            
+                HStack{
                     NavigationLink(destination: AugmentedRealityView()){
                         HowToCardView(howToCardImage: howToCardInfos[2][0], howToRetanguloImage: howToCardInfos[2][1], howToTitle: howToCardInfos[2][2])
                     }
@@ -122,7 +116,9 @@ struct HowToUseView : View {
                         HowToCardView(howToCardImage: howToCardInfos[3][0], howToRetanguloImage: howToCardInfos[3][1], howToTitle: howToCardInfos[3][2])
                     }
                 }
-            }
+            }//.padding(.top, -40)
+            .padding(.leading, 60)
+                .padding(.trailing, 60)
         }
 }
 
@@ -133,17 +129,25 @@ struct DescriptionView : View {
             HStack{
                 VStack(alignment: .leading){
                     Text("Montando o Recife").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
+            
                     
-                    Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades").font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary"))
+                    Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades").font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary")).padding(.vertical, 16)
+                    
                     
                     NavigationLink(destination: Text("oi"), isActive: $showExperience){
                         
-                        LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill")  , action: {
+                        LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill"), action: {
                             self.showExperience = true
+                            
                         }
+                        
                         );
-                                            }
-                }.padding(.leading, 60)
+                           
+                        
+                    }
+                    
+                }.padding(.top, -300)
+                .padding(.leading, 60)
                     .padding(.trailing, 60)
                 
                 Image("experienciarecife")
@@ -209,7 +213,7 @@ struct HowToCardView: View {
                 Image(howToRetanguloImage).resizable().frame(width: 343, height: 72)
                 
                 Text(howToTitle)
-                    .frame(maxWidth:333, alignment: .leading)
+                    .frame(maxWidth: 333, alignment: .leading)
                     .font(.custom("ObviouslyVar-WideSmBd", size: 16)).foregroundColor(Color("accent"))
 
             }
