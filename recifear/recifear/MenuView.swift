@@ -58,18 +58,18 @@ struct ExperienceView : View {
             Text("Experiências")
                 .font(.custom("ObviouslyVar-WideSmBd", size: 40))
                 .foregroundColor(Color("primary"))
-//                .padding(.top, 60)
-//                .padding(.bottom, 30)
-                
+            //                .padding(.top, 60)
+            //                .padding(.bottom, 30)
+            
             
             VStack {
                 NavigationLink(destination: DescriptionView(), isActive: $showBuildingRecife) {
                     LongCardView(longCardImage: longCardInfos[0][0], longTitle: longCardInfos[0][1], longSubtitle: longCardInfos[0][2])
                 }
-
-              
-               
-            
+                
+                
+                
+                
             }
         }.padding(.top, -350)
     }
@@ -78,48 +78,57 @@ struct ExperienceView : View {
 
 struct HowToUseView : View {
     
-    let howToCardInfos = [
-        ["montandorecife", "retangulo", "Primeiros Passos"],
-        ["montandorecife",  "retangulo", "As experiências"],
-        ["montandorecife",  "retangulo", "Realidade aumentada"],
-        ["montandorecife",  "retangulo", "Sobre nós"]]
+    let howToCardInfos = ["experience", "experience", "experience", "experience"]
     
-  
     var body : some View {
-        
-     
-        VStack(alignment: .leading, spacing: 36){
+        VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Como usar o app")
+                    .font(.custom("ObviouslyVar-WideSmBd", size: 40))
+                    .foregroundColor(Color("primary"))
                 
-            Text("Como usar o app").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
-                .padding(.top, 60)
-
-                Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")  .font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary"))
-  
-            HStack{
-                    NavigationLink(destination: FirstStepsView()) {
-                        HowToCardView(howToCardImage: howToCardInfos[0][0], howToRetanguloImage: howToCardInfos[0][1], howToTitle: howToCardInfos[0][2])
-                        
-                    }
-                
-                    NavigationLink(destination: TheExperiencesView()){
-                        
-                        HowToCardView(howToCardImage: howToCardInfos[1][0], howToRetanguloImage: howToCardInfos[1][1], howToTitle: howToCardInfos[1][2])
-                    }
-
+                Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades")
+                    .font(.custom("ObviouslyVar-Reg", size: 20))
+                    .foregroundColor(Color("primary"))
             }
             
+            VStack(spacing: 30){
                 HStack{
-                    NavigationLink(destination: AugmentedRealityView()){
-                        HowToCardView(howToCardImage: howToCardInfos[2][0], howToRetanguloImage: howToCardInfos[2][1], howToTitle: howToCardInfos[2][2])
+                    NavigationLink(destination: FirstStepsView()) {
+                        Image(howToCardInfos[0])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 343, minHeight: 168)
                     }
-                    NavigationLink(destination: AboutUsView()){
-                        HowToCardView(howToCardImage: howToCardInfos[3][0], howToRetanguloImage: howToCardInfos[3][1], howToTitle: howToCardInfos[3][2])
+                    NavigationLink(destination: TheExperiencesView()){
+                        Image(howToCardInfos[1])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 343, minHeight: 168)
                     }
                 }
-            }//.padding(.top, -40)
-            .padding(.leading, 60)
-                .padding(.trailing, 60)
+                
+                HStack(spacing: 44){
+                    NavigationLink(destination: AugmentedRealityView()){
+                        Image(howToCardInfos[2])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 343, minHeight: 168)
+                    }
+                    
+                    NavigationLink(destination: AboutUsView()){
+                        Image(howToCardInfos[3])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 343, minHeight: 168)
+                    }
+                    
+                }
+            }
         }
+        .padding(.leading, 36)
+        .padding(.trailing, 36)
+    }
 }
 
 struct DescriptionView : View {
@@ -128,26 +137,26 @@ struct DescriptionView : View {
         NavigationStack{
             HStack{
                 VStack(alignment: .leading){
-                    Text("Montando o Recife").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
-            
+                    Text("Montando Recife").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
+                    
                     
                     Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades").font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary")).padding(.vertical, 16)
                     
                     
-                    NavigationLink(destination: ContentView(), isActive: $showExperience){
+                    NavigationLink(destination: Text("OI"), isActive: $showExperience){
                         
                         LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill"), action: {
                             self.showExperience = true
                             
                         }
+                                    
+                        )
                         
-                        );
-                           
                         
                     }
                     
                 }.padding(.top, -300)
-                .padding(.leading, 60)
+                    .padding(.leading, 60)
                     .padding(.trailing, 60)
                 
                 Image("experienciarecife")
@@ -195,33 +204,6 @@ struct LongCardView: View {
         }.padding(.top, 20)
     }
 }
-
-struct HowToCardView: View {
-    let howToCardImage: String
-    let howToRetanguloImage: String
-    let howToTitle: String
-    
-    var body: some View {
-        
-        VStack(alignment: .leading, spacing: 0) {
-            
-            Image(howToCardImage)
-                .resizable()
-                .frame(width: 343, height: 168)
-            
-            ZStack {
-                Image(howToRetanguloImage).resizable().frame(width: 343, height: 72)
-                
-                Text(howToTitle)
-                    .frame(maxWidth: 333, alignment: .leading)
-                    .font(.custom("ObviouslyVar-WideSmBd", size: 16)).foregroundColor(Color("accent"))
-
-            }
-         
-        }
-    }
-}
-
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
