@@ -149,10 +149,7 @@ struct DescriptionView : View {
                             self.showExperience = true
                             
                         }
-                                    
                         )
-                        
-                        
                     }
                     
                 }.padding(.top, -300)
