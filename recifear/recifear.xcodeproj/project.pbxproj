@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3079DF0629DDA79200E5E7FE /* AugmentedRealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079DF0529DDA79200E5E7FE /* AugmentedRealityView.swift */; };
+		3079DF0829DDA7A300E5E7FE /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079DF0729DDA7A300E5E7FE /* AboutUsView.swift */; };
 		30D3A66029D30F20005FA23F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3A65F29D30F20005FA23F /* MenuView.swift */; };
 		8A19783C29CCDFAC004B7466 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A19783B29CCDFAC004B7466 /* predio.usdz */; };
 		8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3079DF0529DDA79200E5E7FE /* AugmentedRealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityView.swift; sourceTree = "<group>"; };
+		3079DF0729DDA7A300E5E7FE /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		30D3A65F29D30F20005FA23F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8A19783B29CCDFAC004B7466 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
 		8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			children = (
 				93C2615729DB7791001BBFA9 /* FirstStepsView.swift */,
 				93C2615929DB89EE001BBFA9 /* TheExperiencesView.swift */,
+				3079DF0529DDA79200E5E7FE /* AugmentedRealityView.swift */,
+				3079DF0729DDA7A300E5E7FE /* AboutUsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,11 +229,13 @@
 				8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */,
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
 				8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */,
+				3079DF0829DDA7A300E5E7FE /* AboutUsView.swift in Sources */,
 				93C2615A29DB89EE001BBFA9 /* TheExperiencesView.swift in Sources */,
 				8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */,
 				8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */,
 				8AA8F1F229CB0F67002B1333 /* AppDelegate.swift in Sources */,
 				93C2615829DB7791001BBFA9 /* FirstStepsView.swift in Sources */,
+				3079DF0629DDA79200E5E7FE /* AugmentedRealityView.swift in Sources */,
 				8AA8F1F629CB0F67002B1333 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = accent;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"recifear/Preview Content\"";
@@ -385,7 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = accent;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"recifear/Preview Content\"";

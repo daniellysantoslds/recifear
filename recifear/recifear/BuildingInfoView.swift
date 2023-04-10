@@ -35,13 +35,14 @@ struct BuildingInfoView: View {
                 HStack {
                     Text(buildingInfoModel.title)
 //                        .font(.largeTitle)
-                        .font(.custom("ObviouslyVar-Reg", size: 40))
+                        .font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
                     Spacer()
                 }
                 
                 HStack {
                     Text(buildingInfoModel.description)
                         .multilineTextAlignment(.leading)
+                        .font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary"))
                     Spacer()
                 }
                 Spacer()
@@ -58,6 +59,7 @@ struct BuildingInfoView: View {
                     HStack {
                         Text(buildingInfoModel.impact)
                             .multilineTextAlignment(.leading)
+                            .font(.custom("ObviouslyVar-Reg", size: 15)).foregroundColor(Color("primary"))
                         Spacer()
                     }
                 }
@@ -75,6 +77,8 @@ struct BuildingInfoView: View {
                     HStack {
                         Text(buildingInfoModel.history)
                             .multilineTextAlignment(.leading)
+                            .font(.custom("ObviouslyVar-Reg", size: 15)).foregroundColor(Color("primary"))
+
                         Spacer()
                     }
                 }
