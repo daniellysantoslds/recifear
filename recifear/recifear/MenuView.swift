@@ -134,7 +134,7 @@ struct DescriptionView : View {
                     Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades").font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary")).padding(.vertical, 16)
                     
                     
-                    NavigationLink(destination: Text("oi"), isActive: $showExperience){
+                    NavigationLink(destination: ContentView(), isActive: $showExperience){
                         
                         LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill"), action: {
                             self.showExperience = true
