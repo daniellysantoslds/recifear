@@ -22,10 +22,13 @@ struct ARModel{
         }
 
         // CONFIGURA A REALITADE AUMENTADA PARA IDENTIFICAR IMAGENS 2D NO ESPAÇO
-        let configuration = ARImageTrackingConfiguration()
-        configuration.trackingImages = trackerImages
-        configuration.maximumNumberOfTrackedImages = 20
+//        let configuration = ARImageTrackingConfiguration()
+//        configuration.trackingImages = trackerImages
+//        configuration.maximumNumberOfTrackedImages = 20
         
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.detectionImages = trackerImages
+        configuration.maximumNumberOfTrackedImages = 0
         arView.session.run(configuration)
     }
 

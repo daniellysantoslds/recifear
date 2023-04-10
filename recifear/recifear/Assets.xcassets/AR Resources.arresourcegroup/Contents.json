@@ -5,19 +5,28 @@
   },
   "resources" : [
     {
-      "filename" : "barraco.arreferenceimage"
-    },
-    {
       "filename" : "barraco1.arreferenceimage"
     },
     {
-      "filename" : "barraco7.arreferenceimage"
+      "filename" : "barraco2.arreferenceimage"
     },
     {
-      "filename" : "palafita.arreferenceimage"
+      "filename" : "barraco3.arreferenceimage"
     },
     {
-      "filename" : "predio.arreferenceimage"
+      "filename" : "barraco4.arreferenceimage"
+    },
+    {
+      "filename" : "historico1.arreferenceimage"
+    },
+    {
+      "filename" : "historico2.arreferenceimage"
+    },
+    {
+      "filename" : "historico3.arreferenceimage"
+    },
+    {
+      "filename" : "historico4.arreferenceimage"
     },
     {
       "filename" : "predio1.arreferenceimage"
@@ -26,16 +35,10 @@
       "filename" : "predio2.arreferenceimage"
     },
     {
-      "filename" : "predio5.arreferenceimage"
+      "filename" : "predio3.arreferenceimage"
     },
     {
-      "filename" : "predio6.arreferenceimage"
-    },
-    {
-      "filename" : "predio8.arreferenceimage"
-    },
-    {
-      "filename" : "predio9.arreferenceimage"
+      "filename" : "predio4.arreferenceimage"
     }
   ]
 }
