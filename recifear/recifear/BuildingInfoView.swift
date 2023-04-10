@@ -10,7 +10,7 @@ import SwiftUI
 struct BuildingInfoView: View {
     @State var impactBool : Bool = false
     @State var historyBool : Bool = false
-    
+    @ObservedObject var settings = Settings.shared
     var buildingInfoModel : BuildingInfoModel
     @Binding var opened : Bool
     
@@ -22,7 +22,7 @@ struct BuildingInfoView: View {
                 
                 HStack{
                     Button {
-                        opened = false
+                        settings.opened = false
                     } label: {
                         HStack{
                             Image(systemName: "multiply.square.fill")
