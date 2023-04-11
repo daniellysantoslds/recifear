@@ -5,16 +5,28 @@
   },
   "resources" : [
     {
-      "filename" : "barraco.arreferenceimage"
-    },
-    {
       "filename" : "barraco1.arreferenceimage"
     },
     {
-      "filename" : "barraco7.arreferenceimage"
+      "filename" : "barraco2.arreferenceimage"
     },
     {
-      "filename" : "palafita.arreferenceimage"
+      "filename" : "barraco3.arreferenceimage"
+    },
+    {
+      "filename" : "barraco4.arreferenceimage"
+    },
+    {
+      "filename" : "casario1.arreferenceimage"
+    },
+    {
+      "filename" : "casario2.arreferenceimage"
+    },
+    {
+      "filename" : "casario3.arreferenceimage"
+    },
+    {
+      "filename" : "casario4.arreferenceimage"
     },
     {
       "filename" : "palafita1.arreferenceimage"
@@ -29,22 +41,16 @@
       "filename" : "palafita4.arreferenceimage"
     },
     {
-      "filename" : "predio.arreferenceimage"
+      "filename" : "prédio1.arreferenceimage"
     },
     {
-      "filename" : "predio1.arreferenceimage"
+      "filename" : "prédio2.arreferenceimage"
     },
     {
-      "filename" : "predio2.arreferenceimage"
+      "filename" : "prédio3.arreferenceimage"
     },
     {
-      "filename" : "predio5.arreferenceimage"
-    },
-    {
-      "filename" : "predio6.arreferenceimage"
-    },
-    {
-      "filename" : "predio8.arreferenceimage"
+      "filename" : "prédio4.arreferenceimage"
     }
   ]
 }

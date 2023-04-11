@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "casa.png",
+      "filename" : "barraco1@4x.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "centimeters",
-    "width" : 12
+    "width" : 9
   }
 }

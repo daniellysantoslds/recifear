@@ -69,11 +69,14 @@ struct ARModel{
         let imageAnchorEntity = AnchorEntity(anchor: imageAnchor)
 
         // PODE MEXER NA ESCALA DO OBJETO 3D
-        construction.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
+        construction.transform.scale = SIMD3<Float>(0.0006, 0.0006, 0.0006)
 
         // SITUA O OBJETO 3D NO ESPAÇO EM RELAÇÃO À ÂNCORA
         construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
 
+        construction.physicsBody = .init()
+        construction.physicsBody?.mode = .kinematic
+        
         // INSTALA POSSIBILIDADE DE MUDAR O TAMANHO E ROTACIONAR
         construction.generateCollisionShapes(recursive: true)
         arView.installGestures([.scale, .rotation], for: construction)
@@ -89,33 +92,6 @@ struct ARModel{
            
         }
     
-//    mutating func imageRecognized(anchors: [ARAnchor]) {
-//        anchors.compactMap { $0 as? ARImageAnchor }.forEach {
-//            let anchorEntity = AnchorEntity()
-//            let modelEntity = try! ModelEntity.loadModel(named: String($0.name!).dropLast() + ".usdz")
-//            modelEntity.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
-//            modelEntity.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: anchorEntity)
-//            modelEntity.generateCollisionShapes(recursive: true)
-//            arView.installGestures([.scale, .rotation], for: modelEntity)
-//                .forEach{ gestureRecognizer in
-//                    gestureRecognizer.addTarget(self.arView, action: #selector(arView.capScale(_:)))
-//                }
-//
-//                anchorEntity.addChild(modelEntity)
-//                arView.scene.addAnchor(anchorEntity)
-//                anchorEntity.transform.matrix = $0.transform
-//                imageAnchorToEntity[$0] = anchorEntity
-//            }
-//
-//    }
-//
-//    mutating func updateAnchors(anchors: [ARAnchor]){
-//        anchors.compactMap { $0 as? ARImageAnchor }.forEach {
-//             let anchorEntity = imageAnchorToEntity[$0]
-//                 anchorEntity?.transform.matrix = $0.transform
-//        }
-//    }
-
 }
 
 
