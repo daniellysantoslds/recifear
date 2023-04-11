@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "predio6.png",
+      "filename" : "historico1.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "centimeters",
-    "width" : 5.2999999999999998
+    "width" : 5
   }
 }
