@@ -13,6 +13,7 @@
 		8A22B49F29E5F5320013D573 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A22B49E29E5F5320013D573 /* barraco.usdz */; };
 		8A22B4A129E5F5380013D573 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A22B4A029E5F5380013D573 /* predio.usdz */; };
 		8A22B4A329E5F5540013D573 /* palafita.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A22B4A229E5F5540013D573 /* palafita.usdz */; };
+		8A22B4A529E623230013D573 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22B4A429E623230013D573 /* Settings.swift */; };
 		8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */; };
 		8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */; };
 		8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */; };
@@ -36,6 +37,7 @@
 		8A22B49E29E5F5320013D573 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
 		8A22B4A029E5F5380013D573 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
 		8A22B4A229E5F5540013D573 /* palafita.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = palafita.usdz; sourceTree = "<group>"; };
+		8A22B4A429E623230013D573 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoView.swift; sourceTree = "<group>"; };
 		8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuldingInfoModel.swift; sourceTree = "<group>"; };
 		8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoViewModel.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA8F1F329CB0F67002B1333 /* ContentView.swift */,
+				8A22B4A429E623230013D573 /* Settings.swift */,
 				93C2615729DB7791001BBFA9 /* FirstStepsView.swift */,
 				93C2615929DB89EE001BBFA9 /* TheExperiencesView.swift */,
 				3079DF0729DDA7A300E5E7FE /* AboutUsView.swift */,
@@ -228,6 +231,7 @@
 				93C2615529DB5E8B001BBFA9 /* LargeButton.swift in Sources */,
 				8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */,
 				8AA8F20429CB0FC2002B1333 /* ARViewModel.swift in Sources */,
+				8A22B4A529E623230013D573 /* Settings.swift in Sources */,
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
 				8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */,
 				3079DF0829DDA7A300E5E7FE /* AboutUsView.swift in Sources */,

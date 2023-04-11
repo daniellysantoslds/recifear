@@ -172,7 +172,7 @@ struct DescriptionView : View {
                             .padding(.vertical, 16)
                     }
                     Spacer()
-                    NavigationLink(destination: ContentView(), isActive: $showExperience){
+                    NavigationLink(destination: Text("OI!"), isActive: $showExperience){
                         LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill"), action: {
                             self.showExperience = true
                         })
