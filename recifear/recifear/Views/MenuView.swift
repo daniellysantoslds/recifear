@@ -19,26 +19,55 @@ struct MenuView: View {
         NavigationStack {
             HStack{
                 VStack(spacing: 36){
-                    ForEach(cardInfos, id: \.self) { cardInfo in
-                        CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
-                            .onTapGesture {
-                                selectedCard = cardInfo[0]
-                            }
-                        
-                    }.listStyle(SidebarListStyle())
-                        .padding(.horizontal, 24)
-                }.frame(maxWidth: 306)
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.top, 100)
+                    
+                    CardView(cardImage: cardInfos[0][0], cardText: cardInfos[0][1])
+                        .onTapGesture {
+                            selectedCard = cardInfos[0][0]
+                        }.saturation(selectedCard == "experiencias" ? 1 : 0.6)
+                        .scaleEffect(selectedCard == "experiencias" ? 1 : 0.97)
+                        .animation(.spring(), value: selectedCard)
+                    
+                    CardView(cardImage: cardInfos[1][0], cardText: cardInfos[1][1])
+                        .onTapGesture {
+                            selectedCard = cardInfos[1][0]
+                        }.saturation(selectedCard == "experiencias" ? 0.6 : 1)
+                        .scaleEffect(selectedCard == "experiencias" ? 0.97 : 1)
+                        .animation(.spring(), value: selectedCard)
+                    
+//                    ForEach(cardInfos, id: \.self) { cardInfo in
+//                        CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
+//                            .onTapGesture {
+//                                selectedCard = cardInfo[0]
+//                            }
+//                    }.listStyle(SidebarListStyle())
+                    
+                    Spacer()
+                }
+                .background(
+                    Rectangle()
+                        .fill(.white)
+                        .ignoresSafeArea()
+                )
+                .padding(.horizontal, 24)
+                .frame(width: UIScreen.main.bounds.width * 0.27)
+
                 
                 ZStack{
-                    Color(red: 255/255, green: 250/255, blue: 248/255).ignoresSafeArea()
+                    Color("background").ignoresSafeArea()
                     
                     if selectedCard == "experiencias"{
                         ExperienceView()
+    
                     } else{
                         HowToUseView()
                     }
                     
                 }
+                
             }
         }
     }
@@ -46,10 +75,6 @@ struct MenuView: View {
 
 
 struct ExperienceView : View {
-    let longCardInfos = [
-        ["montandorecife", "Montando Recife", "Crie o Recife dos seus sonhos"]
-    ]
-    
     @State var showBuildingRecife = false
     
     var body : some View {
@@ -110,17 +135,15 @@ struct HowToUseView : View {
                     }
                     
                     HStack(spacing: 44){
-                        NavigationLink(destination: AugmentedRealityView()){
-                            Image(howToCardInfos[2])
-                                .resizable()
-                                .scaledToFit()
-                        }
                         
                         NavigationLink(destination: AboutUsView()){
                             Image(howToCardInfos[3])
                                 .resizable()
                                 .scaledToFit()
                         }
+                        Rectangle()
+                            .frame(height: 0)
+                        
                         
                     }
                 }
@@ -139,30 +162,40 @@ struct DescriptionView : View {
         NavigationView{
             HStack{
                 VStack{
-                    
                     VStack(alignment: .leading){
-                        Text("Montando Recife").font(.custom("ObviouslyVar-WideSmBd", size: 40)).foregroundColor(Color("primary"))
+                        Text("Montando Recife")
+                            .font(.custom("ObviouslyVar-WideSmBd", size: 40))
+                            .foregroundColor(Color("primary"))
+                        
                         
                         Text("Boas vindas ao RecifeAR, uma ferramenta que mistura atividades manuais com realidade aumentada para representar cidades.").font(.custom("ObviouslyVar-Reg", size: 20)).foregroundColor(Color("primary"))
                             .padding(.vertical, 16)
                     }
                     Spacer()
-                    NavigationLink(destination: Text("OI"), isActive: $showExperience){
+                    NavigationLink(destination: ContentView(), isActive: $showExperience){
                         LargeButton(title: "Começar Experiência", icon: Image(systemName:"play.fill"), action: {
                             self.showExperience = true
                         })
                     }
-                    Spacer()
-                }.padding(.top, 100)
-                .padding(.trailing, 36)
-                .layoutPriority(1)
+                }
+                .frame(maxWidth: UIScreen.main.bounds.width * 0.35)
+                .padding(.vertical, 71)
+                .padding(.horizontal, 36)
+                .background(
+                    Rectangle()
+                        .fill(.white)
+                        .ignoresSafeArea()
+                )
                 
+                Spacer()
+            }.background(
                 Image("experienciarecife")
                     .resizable()
-                    .ignoresSafeArea()
                     .scaledToFill()
-            }
-            .padding(.leading, 36)
+                    .ignoresSafeArea()
+                
+            )
+            
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "predio9.HEIC",
+      "filename" : "palafita3.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "centimeters",
-    "width" : 7.5
+    "width" : 5
   }
 }
