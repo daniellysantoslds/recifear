@@ -15,18 +15,19 @@ struct TheExperiencesView: View {
             NavigationStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 30) {
-                        
-                        Text("As experiências")
-                            .font(.custom("ObviouslyVar-WideSmBd", size: 40))
-                            .foregroundColor(Color("primary"))
-
-                        Text("O RecifeAR foi idealizado como uma ferramenta que pudesse ser utilizada em diversos contextos, para quem quisesse ensinar e discutir sobre temas de Justiça Social")
-                            .font(.custom("ObviouslyVar-Reg", size: 20))
-                            .foregroundColor(Color("primary"))
-                        
-                        Text("Nosso objetivo não é trazer temas obrigatórios ou um guia de como e quando utilizar cada experiência e sim instigar você a utilizar o que trazemos aqui em seu contexto, seja em uma oficina, em um evento, em uma sala de aula ou afins.")
-                            .font(.custom("ObviouslyVar-Reg", size: 20))
-                            .foregroundColor(Color("black"))
+                        Group{
+                            Text("As experiências")
+                                .font(.custom("ObviouslyVar-WideSmBd", size: 40))
+                                .foregroundColor(Color("primary"))
+                            
+                            Text("O RecifeAR foi idealizado como uma ferramenta que pudesse ser utilizada em diversos contextos, para quem quisesse ensinar e discutir sobre temas de Justiça Social")
+                                .font(.custom("ObviouslyVar-Reg", size: 20))
+                                .foregroundColor(Color("primary"))
+                            
+                            Text("Nosso objetivo não é trazer temas obrigatórios ou um guia de como e quando utilizar cada experiência e sim instigar você a utilizar o que trazemos aqui em seu contexto, seja em uma oficina, em um evento, em uma sala de aula ou afins.")
+                                .font(.custom("ObviouslyVar-Reg", size: 20))
+                                .foregroundColor(Color("black"))
+                        }
                         
                         Group {
                             Image("montandorecife")
@@ -62,7 +63,7 @@ struct TheExperiencesView: View {
                         
                     }.padding(.horizontal, 60)
     
-                }
+                }.background(Color(.white))
             }
         }
     }

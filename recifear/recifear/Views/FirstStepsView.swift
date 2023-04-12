@@ -87,7 +87,7 @@ struct FirstStepsView: View {
                         
                     }
                 }.padding(.horizontal, 60)
-            }
+            }.background(Color(.white))
         }
     }
     

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Rectangle 10.png",
+      "filename" : "experienciarecife@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "experienciarecife@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "experienciarecife@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

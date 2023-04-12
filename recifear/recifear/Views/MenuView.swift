@@ -38,24 +38,11 @@ struct MenuView: View {
                         .scaleEffect(selectedCard == "experiencias" ? 0.97 : 1)
                         .animation(.spring(), value: selectedCard)
                     
-//                    ForEach(cardInfos, id: \.self) { cardInfo in
-//                        CardView(cardImage: cardInfo[0], cardText: cardInfo[1])
-//                            .onTapGesture {
-//                                selectedCard = cardInfo[0]
-//                            }
-//                    }.listStyle(SidebarListStyle())
-                    
                     Spacer()
                 }
-                .background(
-                    Rectangle()
-                        .fill(.white)
-                        .ignoresSafeArea()
-                )
-                .padding(.horizontal, 24)
                 .frame(width: UIScreen.main.bounds.width * 0.27)
+                .padding(.horizontal, 24)
 
-                
                 ZStack{
                     Color("background").ignoresSafeArea()
                     
@@ -69,6 +56,9 @@ struct MenuView: View {
                 }
                 
             }
+            .background(
+                Color(.white)
+            )
         }
     }
 }
@@ -143,8 +133,6 @@ struct HowToUseView : View {
                         }
                         Rectangle()
                             .frame(height: 0)
-                        
-                        
                     }
                 }
             }

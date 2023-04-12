@@ -30,10 +30,6 @@ class ARViewModel: UIViewController, ObservableObject, ARSessionDelegate {
         model.imageRecognized(anchors: anchors)
     }
     
-    func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
-        model.updateAnchors(anchors: anchors)
-    }
-    
     func resetSession(){
         model.resetSession()
     }

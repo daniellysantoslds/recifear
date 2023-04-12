@@ -24,22 +24,40 @@ struct ContentView : View {
                 ZStack{
                     ARViewContainer(arViewModel: arViewModel)
                     VStack{
+                        
+                        if settings.created{
+                            Text("Construção criada, dê um passo para trás")
+                                .font(.custom("ObviouslyVar-WideSmBd", size: 20))
+                                .padding()
+                                .foregroundColor(Color("primary"))
+                                .background(Color("background-1"))
+                                .cornerRadius(15)
+                            
+                        }
                         Spacer()
-                        Button("RESET"){
+                        LargeButton(title: "COMEÇAR DE NOVO", icon: Image(systemName: "arrow.clockwise")){
                             arViewModel.resetSession()
                         }
                         .buttonStyle(.borderedProminent)
                         .padding(20)
+                        
                     }
+                    .onChange(of: settings.created) { _ in
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            settings.created = false
+                        }
+                    }
+                    
                 }
                 
                 Spacer()
                 
-                if settings.opened {
+                if settings.opened == true {
                     BuildingInfoView(buildingInfoModel:
                                         buildingInfoViewModel.allInfos[settings.currentConstruction] ??
                                      BuildingInfoModel(bid: "", title: "???", description: "", impact: "", history: ""), opened: $opened)
                 }
+                
             }
         }
     }
@@ -47,22 +65,22 @@ struct ContentView : View {
 
 // CRIA O VIEW MODEL (QUE CONTROLA O MODEL)
 struct ARViewContainer: UIViewRepresentable {
-
+    
     var arViewModel : ARViewModel
-
+    
     // FUNÇÃO PADRÃO DO PROTOCOLO UIVIEWREPRESENTABLE QUE RODA O MÉTODO PRA DAR O DELEGATE PRO VIEWMODEL E RETORNA UMA VIEW
     func makeUIView(context: Context) -> ARView {
         arViewModel.startSessionDelegate()
-
+        
         arViewModel.arView.enableFindOutMore()
         arViewModel.arView.enableScaleCap()
-
+        
         return arViewModel.arView
     }
-
+    
     // TENHO QUE VER AINDA COMO USAR ISSO MELHOR
     func updateUIView(_ uiView: ARView, context: Context) {
-
+        
     }
 }
 

@@ -35,7 +35,7 @@ struct AboutUsView: View {
                         .foregroundColor(Color("black"))
                     
                 }.padding(.horizontal, 60)
-            }
+            }.background(Color(.white))
         }
     }
 }

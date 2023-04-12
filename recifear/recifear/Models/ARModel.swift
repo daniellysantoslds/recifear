@@ -11,7 +11,8 @@ import ARKit
 
 struct ARModel{
     private(set) var arView : ARView
-    var imageAnchorToEntity: [ARImageAnchor: AnchorEntity] = [:]
+    
+    private let size : Float = 0.0002
     
     // INICIALIZA O MODEL, ASSIM QUE INSTANCIADO
     init() {
@@ -30,6 +31,8 @@ struct ARModel{
     
     
     func resetSession(){
+        Settings.shared.created = false
+
         guard let trackerImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
             fatalError("Missing expected asset catalog resources.")
         }
@@ -47,19 +50,26 @@ struct ARModel{
         guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
             fatalError("Missing expected asset catalog resources.")
         }
-
+        
         // PEGA AS ÂNCORAS (TIPO AS COORDENADAS)
         for anchor in anchors {
-            guard let imageAnchor = anchor as? ARImageAnchor else { return }
-            var modelEntity = ModelEntity()
+                guard let imageAnchor = anchor as? ARImageAnchor else { return }
+                var modelEntity = ModelEntity()
 
-            // CRIA O OBJETO 3D, e remove o número final da imagem pra chamar o model
-            modelEntity = try! ModelEntity.loadModel(named: String(imageAnchor.name!).dropLast() + ".usdz")
-            modelEntity.name = imageAnchor.name!
+                // CRIA O OBJETO 3D, e remove o número final da imagem pra chamar o model
 
-            // COLOCA O OBJETO EM CIMA DA ÂNCORA
-            placeConstruction(construction: modelEntity, imageAnchor: imageAnchor)
+                let justCreated = String(imageAnchor.name!.dropLast())
+                let justCreated1 = String(imageAnchor.name!)
+                
+                Settings.shared.justCreated = justCreated1
+                
+                print(justCreated + ".usdz")
+                
+                modelEntity = try! ModelEntity.loadModel(named: justCreated + ".usdz")
+                modelEntity.name = imageAnchor.name!
 
+                // COLOCA O OBJETO EM CIMA DA ÂNCORA
+                placeConstruction(construction: modelEntity, imageAnchor: imageAnchor)
         }
     }
 
@@ -69,7 +79,7 @@ struct ARModel{
         let imageAnchorEntity = AnchorEntity(anchor: imageAnchor)
 
         // PODE MEXER NA ESCALA DO OBJETO 3D
-        construction.transform.scale = SIMD3<Float>(0.0006, 0.0006, 0.0006)
+        construction.transform.scale = SIMD3<Float>(self.size, self.size, self.size)
 
         // SITUA O OBJETO 3D NO ESPAÇO EM RELAÇÃO À ÂNCORA
         construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
@@ -85,12 +95,10 @@ struct ARModel{
             }
         // FUNÇÕES QUE ADICIONAM DE FATO NA CENA
         imageAnchorEntity.addChild(construction)
+        Settings.shared.created = true
+
         arView.scene.addAnchor(imageAnchorEntity)
     }
-        
-        mutating func updateAnchors(anchors: [ARAnchor]){
-           
-        }
     
 }
 
@@ -119,11 +127,11 @@ extension ARView {
     }
     
     @objc func capScale(_ recognizer: EntityScaleGestureRecognizer){
-        if (recognizer.entity?.scale.x)! > 0.0006 {
-            recognizer.entity?.transform.scale = SIMD3<Float>(0.0006, 0.0006, 0.0006)
-        }
-        if (recognizer.entity?.scale.x)! < 0.00015 {
-            recognizer.entity?.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
-        }
+//        if (recognizer.entity?.scale.x)! > 0.003 {
+//            recognizer.entity?.transform.scale = SIMD3<Float>(0.003, 0.003, 0.003)
+//        }
+//        if (recognizer.entity?.scale.x)! < 0.001 {
+//            recognizer.entity?.transform.scale = SIMD3<Float>(0.001, 0.001, 0.001)
+//        }
     }
 }
