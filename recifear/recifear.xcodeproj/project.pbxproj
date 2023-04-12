@@ -13,7 +13,7 @@
 		8A22B4A129E5F5380013D573 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A22B4A029E5F5380013D573 /* predio.usdz */; };
 		8A22B4A529E623230013D573 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22B4A429E623230013D573 /* Settings.swift */; };
 		8A45761229E71E1A00A22294 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761029E71E1A00A22294 /* barraco.usdz */; };
-		8A45761529E729FE00A22294 /* palafita.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761429E729FE00A22294 /* palafita.usdz */; };
+		8A45761729E73ECD00A22294 /* palafita.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761629E73ECD00A22294 /* palafita.usdz */; };
 		8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */; };
 		8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */; };
 		8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */; };
@@ -37,7 +37,7 @@
 		8A22B4A029E5F5380013D573 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
 		8A22B4A429E623230013D573 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8A45761029E71E1A00A22294 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
-		8A45761429E729FE00A22294 /* palafita.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = palafita.usdz; sourceTree = "<group>"; };
+		8A45761629E73ECD00A22294 /* palafita.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = palafita.usdz; sourceTree = "<group>"; };
 		8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoView.swift; sourceTree = "<group>"; };
 		8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuldingInfoModel.swift; sourceTree = "<group>"; };
 		8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoViewModel.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				8A45761029E71E1A00A22294 /* barraco.usdz */,
-				8A45761429E729FE00A22294 /* palafita.usdz */,
+				8A45761629E73ECD00A22294 /* palafita.usdz */,
 				8A22B49C29E5F5290013D573 /* historico.usdz */,
 				8A22B4A029E5F5380013D573 /* predio.usdz */,
 			);
@@ -230,7 +230,7 @@
 				8A22B4A129E5F5380013D573 /* predio.usdz in Resources */,
 				8AD0347A29DC9C2B00BAA247 /* Obviously-Variable.otf in Resources */,
 				8A22B49D29E5F5290013D573 /* historico.usdz in Resources */,
-				8A45761529E729FE00A22294 /* palafita.usdz in Resources */,
+				8A45761729E73ECD00A22294 /* palafita.usdz in Resources */,
 				8A45761229E71E1A00A22294 /* barraco.usdz in Resources */,
 				8AA8F1F829CB0F68002B1333 /* Assets.xcassets in Resources */,
 			);
