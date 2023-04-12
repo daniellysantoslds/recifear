@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "casario2@4x.png",
+      "filename" : "historico1.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "centimeters",
-    "width" : 9
+    "width" : 10.5
   }
 }

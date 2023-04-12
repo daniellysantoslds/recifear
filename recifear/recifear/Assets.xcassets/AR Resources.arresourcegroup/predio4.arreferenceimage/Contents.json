@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "casario1@4x.png",
+      "filename" : "predio4.png",
       "idiom" : "universal"
     }
   ],
@@ -11,6 +11,6 @@
   },
   "properties" : {
     "unit" : "centimeters",
-    "width" : 9
+    "width" : 10.5
   }
 }
