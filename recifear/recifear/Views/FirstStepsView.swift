@@ -34,9 +34,9 @@ struct FirstStepsView: View {
                             .foregroundColor(Color("black"))
                         
                         LargeButton(title: "Baixar cartas para impressão", icon:Image(systemName: "square.and.arrow.down.fill")) {
-                            print("vai baixar")
-                            
-                        }
+                            guard let url = URL(string: "https://valorinveste.globo.com/mercados/brasil-e-politica/noticia/2023/04/11/inflacao-medida-pelo-ipca-sobe-071percent-em-marco-abaixo-das-expectativas.ghtml") else {
+                                return}
+                            UIApplication.shared.open(url)}
                     }
                     Group{
                         Image("montandorecife")
