@@ -119,8 +119,8 @@ extension ARView {
     }
     
     @objc func capScale(_ recognizer: EntityScaleGestureRecognizer){
-        if (recognizer.entity?.scale.x)! > 0.0004 {
-            recognizer.entity?.transform.scale = SIMD3<Float>(0.0004, 0.0004, 0.0004)
+        if (recognizer.entity?.scale.x)! > 0.0006 {
+            recognizer.entity?.transform.scale = SIMD3<Float>(0.0006, 0.0006, 0.0006)
         }
         if (recognizer.entity?.scale.x)! < 0.00015 {
             recognizer.entity?.transform.scale = SIMD3<Float>(0.00015, 0.00015, 0.00015)
