@@ -12,5 +12,4 @@ class Settings: ObservableObject{
     @Published var opened = false
     @Published var currentConstruction = ""
     @Published var created = false
-    @Published var justCreated = ""
 }

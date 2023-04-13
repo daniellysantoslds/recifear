@@ -12,10 +12,26 @@ import ARKit
 struct ARModel{
     private(set) var arView : ARView
     
-    private let size : Float = 0.0002
+    private let size : Float = 0.0015
+    
+    private var models3D : [String : Model3D] = {
+        let filemanager = FileManager.default
+        guard let path = Bundle.main.resourcePath, let files = try? filemanager.contentsOfDirectory(atPath: path) else { return [:] }
+        
+        var availableModels : [String : Model3D] = [:]
+        for filename in files where filename.hasSuffix("usdz") {
+            let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+            let model3D = Model3D(modelName: modelName)
+            availableModels[filename] = model3D
+        }
+        
+        return availableModels
+
+    }()
     
     // INICIALIZA O MODEL, ASSIM QUE INSTANCIADO
     init() {
+        
         arView = ARView(frame: .zero)
         
         // PEGA TODAS AS IMAGENS DAS PASTA RESOURCES QUE SERVIRÃO DE ÂNCORA
@@ -25,8 +41,14 @@ struct ARModel{
         
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = trackerImages
+        
+        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+            configuration.sceneReconstruction = .mesh
+        }
+        
         configuration.maximumNumberOfTrackedImages = 0
-        arView.session.run(configuration, options: [ARSession.RunOptions.resetTracking, ARSession.RunOptions.removeExistingAnchors])
+        
+        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     
@@ -36,16 +58,23 @@ struct ARModel{
         guard let trackerImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
             fatalError("Missing expected asset catalog resources.")
         }
+
+
+        arView.session.pause()
         
+        for anchor in arView.scene.anchors {
+            arView.scene.removeAnchor(anchor)
+        }
+
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = trackerImages
         configuration.maximumNumberOfTrackedImages = 0
-        arView.session.run(configuration, options: [ARSession.RunOptions.resetTracking, ARSession.RunOptions.removeExistingAnchors])
+        arView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     // ENCONTRA AS IMAGENS NA CÂMERA
     mutating func imageRecognized(anchors: [ARAnchor]) {
-
+        
         // PEGA TODAS AS IMAGENS DA CENA E ANCORA NUM LUGAR
         guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
             fatalError("Missing expected asset catalog resources.")
@@ -54,50 +83,49 @@ struct ARModel{
         // PEGA AS ÂNCORAS (TIPO AS COORDENADAS)
         for anchor in anchors {
                 guard let imageAnchor = anchor as? ARImageAnchor else { return }
-                var modelEntity = ModelEntity()
+//                var modelEntity = ModelEntity()
 
+                let position = imageAnchor.transform
+            
                 // CRIA O OBJETO 3D, e remove o número final da imagem pra chamar o model
 
-                let justCreated = String(imageAnchor.name!.dropLast())
-                let justCreated1 = String(imageAnchor.name!)
+                let justCreated = String(imageAnchor.name!.dropLast()) + ".usdz"
+            
+            
+                let modelEntity = models3D[justCreated]?.modelEntity
                 
-                Settings.shared.justCreated = justCreated1
-                
-                print(justCreated + ".usdz")
-                
-                modelEntity = try! ModelEntity.loadModel(named: justCreated + ".usdz")
-                modelEntity.name = imageAnchor.name!
-
+//                let modelEntity = try! ModelEntity.loadModel(named: justCreated)
+            
+                modelEntity!.name = imageAnchor.name!
+            
                 // COLOCA O OBJETO EM CIMA DA ÂNCORA
-                placeConstruction(construction: modelEntity, imageAnchor: imageAnchor)
+                placeConstruction(construction: modelEntity!, imageAnchor: position)
         }
     }
 
     // COLOCA O OBJETO EM CIMA DA ÂNCORA
-    mutating func placeConstruction(construction: ModelEntity, imageAnchor: ARImageAnchor){
+    mutating func placeConstruction(construction: ModelEntity, imageAnchor: float4x4){
 
-        let imageAnchorEntity = AnchorEntity(anchor: imageAnchor)
+        let imageAnchorEntity = AnchorEntity(world: imageAnchor)
 
         // PODE MEXER NA ESCALA DO OBJETO 3D
-        construction.transform.scale = SIMD3<Float>(self.size, self.size, self.size)
+        construction.transform.scale = SIMD3<Float>(0.0015, 0.0015, 0.0015)
 
         // SITUA O OBJETO 3D NO ESPAÇO EM RELAÇÃO À ÂNCORA
-        construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
+//        construction.setPosition(SIMD3(x: 0, y: 0, z: 0), relativeTo: imageAnchorEntity)
 
-        construction.physicsBody = .init()
-        construction.physicsBody?.mode = .kinematic
-        
         // INSTALA POSSIBILIDADE DE MUDAR O TAMANHO E ROTACIONAR
         construction.generateCollisionShapes(recursive: true)
         arView.installGestures([.scale, .rotation], for: construction)
             .forEach{ gestureRecognizer in
                 gestureRecognizer.addTarget(self.arView, action: #selector(arView.capScale(_:)))
             }
+        
         // FUNÇÕES QUE ADICIONAM DE FATO NA CENA
         imageAnchorEntity.addChild(construction)
-        Settings.shared.created = true
-
         arView.scene.addAnchor(imageAnchorEntity)
+    
+        Settings.shared.created = true
     }
     
 }
@@ -127,11 +155,11 @@ extension ARView {
     }
     
     @objc func capScale(_ recognizer: EntityScaleGestureRecognizer){
-//        if (recognizer.entity?.scale.x)! > 0.003 {
-//            recognizer.entity?.transform.scale = SIMD3<Float>(0.003, 0.003, 0.003)
-//        }
-//        if (recognizer.entity?.scale.x)! < 0.001 {
-//            recognizer.entity?.transform.scale = SIMD3<Float>(0.001, 0.001, 0.001)
-//        }
+        if (recognizer.entity?.scale.x)! > 0.003 {
+            recognizer.entity?.transform.scale = SIMD3<Float>(0.003, 0.003, 0.003)
+        }
+        if (recognizer.entity?.scale.x)! < 0.001 {
+            recognizer.entity?.transform.scale = SIMD3<Float>(0.001, 0.001, 0.001)
+        }
     }
 }

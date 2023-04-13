@@ -12,8 +12,13 @@
 		8A22B49D29E5F5290013D573 /* historico.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A22B49C29E5F5290013D573 /* historico.usdz */; };
 		8A22B4A129E5F5380013D573 /* predio.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A22B4A029E5F5380013D573 /* predio.usdz */; };
 		8A22B4A529E623230013D573 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22B4A429E623230013D573 /* Settings.swift */; };
-		8A45761229E71E1A00A22294 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761029E71E1A00A22294 /* barraco.usdz */; };
 		8A45761729E73ECD00A22294 /* palafita.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761629E73ECD00A22294 /* palafita.usdz */; };
+		8A45761929E751A700A22294 /* barraco.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761829E751A700A22294 /* barraco.usdz */; };
+		8A45761B29E76D6300A22294 /* Model3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A45761A29E76D6300A22294 /* Model3D.swift */; };
+		8A45761E29E7859300A22294 /* predio1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761C29E7859300A22294 /* predio1.usdz */; };
+		8A45761F29E7859300A22294 /* predio2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45761D29E7859300A22294 /* predio2.usdz */; };
+		8A45762229E7866F00A22294 /* historico1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45762029E7866F00A22294 /* historico1.usdz */; };
+		8A45762329E7866F00A22294 /* historico2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 8A45762129E7866F00A22294 /* historico2.usdz */; };
 		8A760F3729DAFC0C0046F2D8 /* BuildingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */; };
 		8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */; };
 		8A760F3B29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */; };
@@ -36,8 +41,13 @@
 		8A22B49C29E5F5290013D573 /* historico.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = historico.usdz; sourceTree = "<group>"; };
 		8A22B4A029E5F5380013D573 /* predio.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio.usdz; sourceTree = "<group>"; };
 		8A22B4A429E623230013D573 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		8A45761029E71E1A00A22294 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
 		8A45761629E73ECD00A22294 /* palafita.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = palafita.usdz; sourceTree = "<group>"; };
+		8A45761829E751A700A22294 /* barraco.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = barraco.usdz; sourceTree = "<group>"; };
+		8A45761A29E76D6300A22294 /* Model3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model3D.swift; sourceTree = "<group>"; };
+		8A45761C29E7859300A22294 /* predio1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio1.usdz; sourceTree = "<group>"; };
+		8A45761D29E7859300A22294 /* predio2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = predio2.usdz; sourceTree = "<group>"; };
+		8A45762029E7866F00A22294 /* historico1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = historico1.usdz; sourceTree = "<group>"; };
+		8A45762129E7866F00A22294 /* historico2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = historico2.usdz; sourceTree = "<group>"; };
 		8A760F3629DAFC0C0046F2D8 /* BuildingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoView.swift; sourceTree = "<group>"; };
 		8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuldingInfoModel.swift; sourceTree = "<group>"; };
 		8A760F3A29DB0A8C0046F2D8 /* BuildingInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfoViewModel.swift; sourceTree = "<group>"; };
@@ -70,7 +80,11 @@
 		8AA6D76F29E6EBA000ED81CC /* 3D Assets */ = {
 			isa = PBXGroup;
 			children = (
-				8A45761029E71E1A00A22294 /* barraco.usdz */,
+				8A45761C29E7859300A22294 /* predio1.usdz */,
+				8A45761D29E7859300A22294 /* predio2.usdz */,
+				8A45762029E7866F00A22294 /* historico1.usdz */,
+				8A45762129E7866F00A22294 /* historico2.usdz */,
+				8A45761829E751A700A22294 /* barraco.usdz */,
 				8A45761629E73ECD00A22294 /* palafita.usdz */,
 				8A22B49C29E5F5290013D573 /* historico.usdz */,
 				8A22B4A029E5F5380013D573 /* predio.usdz */,
@@ -142,6 +156,7 @@
 			children = (
 				8AA8F20129CB0FA0002B1333 /* ARModel.swift */,
 				8A760F3829DB0A020046F2D8 /* BuldingInfoModel.swift */,
+				8A45761A29E76D6300A22294 /* Model3D.swift */,
 				93C2615329DB5D52001BBFA9 /* Buttons */,
 			);
 			path = Models;
@@ -228,11 +243,15 @@
 			files = (
 				8AA8F1FB29CB0F68002B1333 /* Preview Assets.xcassets in Resources */,
 				8A22B4A129E5F5380013D573 /* predio.usdz in Resources */,
+				8A45762229E7866F00A22294 /* historico1.usdz in Resources */,
 				8AD0347A29DC9C2B00BAA247 /* Obviously-Variable.otf in Resources */,
+				8A45761929E751A700A22294 /* barraco.usdz in Resources */,
+				8A45761E29E7859300A22294 /* predio1.usdz in Resources */,
 				8A22B49D29E5F5290013D573 /* historico.usdz in Resources */,
 				8A45761729E73ECD00A22294 /* palafita.usdz in Resources */,
-				8A45761229E71E1A00A22294 /* barraco.usdz in Resources */,
+				8A45762329E7866F00A22294 /* historico2.usdz in Resources */,
 				8AA8F1F829CB0F68002B1333 /* Assets.xcassets in Resources */,
+				8A45761F29E7859300A22294 /* predio2.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +270,7 @@
 				30D3A66029D30F20005FA23F /* MenuView.swift in Sources */,
 				8A760F3929DB0A020046F2D8 /* BuldingInfoModel.swift in Sources */,
 				3079DF0829DDA7A300E5E7FE /* AboutUsView.swift in Sources */,
+				8A45761B29E76D6300A22294 /* Model3D.swift in Sources */,
 				93C2615A29DB89EE001BBFA9 /* TheExperiencesView.swift in Sources */,
 				8AA8F20229CB0FA0002B1333 /* ARModel.swift in Sources */,
 				8AA8F1F429CB0F67002B1333 /* ContentView.swift in Sources */,
@@ -395,7 +415,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -429,7 +449,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

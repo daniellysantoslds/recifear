@@ -26,9 +26,10 @@ struct ContentView : View {
                     VStack{
                         
                         if settings.created{
-                            Text("Construção criada, dê um passo para trás")
+                            Text("Construção criada,\nafaste o celular\naté ver o modelo")
                                 .font(.custom("ObviouslyVar-WideSmBd", size: 20))
-                                .padding()
+                                .padding(.horizontal, 15)
+                                .padding(.vertical, 20)
                                 .foregroundColor(Color("primary"))
                                 .background(Color("background-1"))
                                 .cornerRadius(15)
