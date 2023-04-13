@@ -95,7 +95,7 @@ struct ExperienceView : View {
 
 struct HowToUseView : View {
     
-    let howToCardInfos = ["experience", "experience", "experience", "experience"]
+    let howToCardInfos = ["experience1", "experience2", "experience3", "experience3"]
     
     var body : some View {
         VStack{
