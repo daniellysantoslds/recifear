@@ -57,10 +57,13 @@ struct BuildingInfoView: View {
 
                 if impactBool == true {
                     HStack {
-                        Text(buildingInfoModel.impact)
-                            .multilineTextAlignment(.leading)
-                            .font(.custom("ObviouslyVar-Reg", size: 15)).foregroundColor(Color("primary"))
-                        Spacer()
+                        ScrollView{
+                            Text(buildingInfoModel.impact)
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(.custom("ObviouslyVar-Reg", size: 15)).foregroundColor(Color("primary"))
+                                                    Spacer()
+                        }
+                        
                     }
                 }
                 
@@ -75,11 +78,14 @@ struct BuildingInfoView: View {
                 
                 if historyBool{
                     HStack {
-                        Text(buildingInfoModel.history)
-                            .multilineTextAlignment(.leading)
-                            .font(.custom("ObviouslyVar-Reg", size: 15)).foregroundColor(Color("primary"))
+                        ScrollView{
+                            Text(buildingInfoModel.history)
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(.custom("ObviouslyVar-Reg", size: 15)).foregroundColor(Color("primary"))
 
-                        Spacer()
+                                                    Spacer()
+                        }
+                        
                     }
                 }
             }
